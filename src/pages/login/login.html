@@ -1,0 +1,47 @@
+<ion-content padding center>
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+        <div text-center>
+          <h1>Bem-vindo ao</h1>
+          <img src="/assets/imgs/logo2.png" class="bg-img">
+        </div>
+        <div text-center>
+          <h4 class="h1">O melhor aplicativo de colaboração urbana</h4>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <form (ngSubmit)="login()" [formGroup]="loginForm">
+      <ion-list padding>
+
+        <ion-item>
+          <ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
+        </ion-item>
+
+        <span class="help-block form-error text-danger small" *ngIf="loginForm.controls['email'].errors?.required && 
+            loginForm.controls['email'].touched">Email is Required </span>
+
+        <ion-item>
+          <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+        </ion-item>
+
+        <!-- <div ngxErrors="password" #passwordErrors="ngxErrors">
+            <div [ngxError]="['minlength', 'required']" [when]="['touched']">It should be at least 5 characters</div>
+          </div> -->
+      </ion-list>
+
+      <div padding-horizontal>
+        <!-- <div class="form-error">{{loginError}}</div> -->
+
+        <button ion-button round full type="submit" [disabled]="!loginForm.valid">Log in</button>
+
+        <button ion-button round full icon-left block (click)="register()">
+          <ion-icon name="person-add"></ion-icon>
+          Cadastrar
+        </button>
+      </div>
+    </form>
+    <google-login></google-login>
+  </ion-grid>
+</ion-content>

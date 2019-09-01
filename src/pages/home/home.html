@@ -1,17 +1,75 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+
+  <ion-title>{{location}}</ion-title>
+
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+  <div class="card-background-page" *ngIf="(publications$| async)?.length === 0; else lista">
+    <ion-card>
+      <img class="opacity" src="/assets/imgs/tangua.jpg" />
+      <div class="card-title">Você ainda não possui publicações</div>
+    </ion-card>
+  </div>
+
+  <ng-template #lista>
+    <ion-list>
+      <ion-item-sliding *ngFor="let publication of publications$ | async">
+        <ion-item>
+          <ion-card>
+            <ion-grid>
+              <ion-row>
+                <ion-avatar item-start>
+                  <img src="{{user.photoURL}}" *ngIf="user.photoURL">
+                  <img src="/assets/imgs/user_default.png">
+                </ion-avatar>
+                <ion-col size-md="6">
+                  <h2>{{user.displayName}}</h2>
+                  <p>{{publication.date | date: 'dd/MM/yyyy H:mm'}}</p>
+                </ion-col>
+                <ion-col size-md="2">
+                  <button ion-button small color="secondary" (click)="editPublication(publication)">
+                    <ion-icon name="create"></ion-icon>
+                  </button>
+                  <button ion-button small color="danger" (click)="removePublication(publication.key)">
+                    <ion-icon name="trash"></ion-icon>
+                  </button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+
+            <ion-card-header>
+              <img src="{{'data:image/png;base64,' + publication.img}}">
+            </ion-card-header>
+
+
+
+            <ion-card-content>
+              <h1>{{publication.category}}</h1>
+
+              <p>
+                {{publication.description}}
+              </p>
+            </ion-card-content>
+
+            <ion-row>
+              <ion-col center>
+                <button ion-button icon-start clear small round
+                  (click)="goToLocation(publication.latitude, publication.longitude)">
+                  <ion-icon name="pin"></ion-icon>
+                  <div>{{ publication.address }}</div>
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-item>
+      </ion-item-sliding>
+    </ion-list>
+  </ng-template>
+  <ion-fab bottom right>
+    <button ion-fab color="primary" (click)="newPublication()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
 </ion-content>

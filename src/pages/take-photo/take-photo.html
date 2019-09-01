@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Tire sua foto</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- <div *ngIf="!picture">
+    <img [src]="picture" *ngIf="picture">
+    <ion-fab bottom center>
+      <button ion-fab (click)="startCamera()">
+        <ion-icon name="arrow-dropleft"></ion-icon>
+      </button>
+    </ion-fab>
+  </div> -->
+
+  <div>
+
+    <ion-fab bottom right>
+      <button ion-fab (click)="takePhoto()">
+        <ion-icon name="camera"></ion-icon>
+      </button>
+    </ion-fab>
+
+    <!-- <ion-fab bottom right>
+      <button ion-fab (click)="switchCamera()">
+        <ion-icon name="reverse-camera"></ion-icon>
+      </button>
+    </ion-fab> -->
+
+    <ion-fab bottom left>
+      <button ion-fab (click)="selectPhoto()">
+        <ion-icon name="md-image"></ion-icon>
+      </button>
+    </ion-fab>
+  </div>
+</ion-content>

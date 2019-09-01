@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Selecione a categoria</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-divider>
+      <ion-label>
+        Iluminação e energia
+      </ion-label>
+    </ion-item-divider>
+    <ion-item *ngFor="let entry of categoriesEnergy">
+      <ion-label>{{entry.val}}</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="entry.isChecked" (ionChange)="selectCategory(entry)"></ion-checkbox>
+    </ion-item>
+
+    <ion-item-divider>
+      <ion-label>
+        Limpeza
+      </ion-label>
+    </ion-item-divider>
+    <ion-item *ngFor="let entry of categoriesClean">
+      <ion-label>{{entry.val}}</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="entry.isChecked" (ionChange)="selectCategory(entry)"></ion-checkbox>
+    </ion-item>
+
+    <ion-item-divider>
+      <ion-label>
+        Pedestres
+      </ion-label>
+    </ion-item-divider>
+    <ion-item *ngFor="let entry of categoriesPedestres">
+      <ion-label>{{entry.val}}</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="entry.isChecked" (ionChange)="selectCategory(entry)"></ion-checkbox>
+    </ion-item>
+
+    <ion-item-divider>
+      <ion-label>
+        Saúde
+      </ion-label>
+    </ion-item-divider>
+    <ion-item *ngFor="let entry of categoriesHealth">
+      <ion-label>{{entry.val}}</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="entry.isChecked" (ionChange)="selectCategory(entry)"></ion-checkbox>
+    </ion-item>
+
+    <ion-item-divider>
+      <ion-label>
+        Segurança
+      </ion-label>
+    </ion-item-divider>
+    <ion-item *ngFor="let entry of categoriesSecurity">
+      <ion-label>{{entry.val}}</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="entry.isChecked" (ionChange)="selectCategory(entry)"></ion-checkbox>
+    </ion-item>
+
+    <ion-item-divider>
+      <ion-label>
+        Trãnsito e vias
+      </ion-label>
+    </ion-item-divider>
+    <ion-item *ngFor="let entry of categoriesTransit">
+      <ion-label>{{entry.val}}</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="entry.isChecked" (ionChange)="selectCategory(entry)"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+</ion-content>

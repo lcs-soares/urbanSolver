@@ -1,5 +1,5 @@
 {
-  "name": "urbanSolver",
+  "name": "UrbanSolver",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "http://ionicframework.com/",
@@ -12,27 +12,92 @@
   },
   "dependencies": {
     "@angular/animations": "5.2.11",
-    "@angular/common": "5.2.11",
-    "@angular/compiler": "5.2.11",
-    "@angular/compiler-cli": "5.2.11",
-    "@angular/core": "5.2.11",
+    "@angular/common": "^5.2.11",
+    "@angular/compiler": "^8.2.3",
+    "@angular/compiler-cli": "^8.2.3",
+    "@angular/core": "^8.0.3",
     "@angular/forms": "5.2.11",
     "@angular/http": "5.2.11",
-    "@angular/platform-browser": "5.2.11",
-    "@angular/platform-browser-dynamic": "5.2.11",
-    "@ionic-native/core": "~4.20.0",
-    "@ionic-native/splash-screen": "~4.20.0",
-    "@ionic-native/status-bar": "~4.20.0",
+    "@angular/platform-browser": "^5.2.11",
+    "@angular/platform-browser-dynamic": "^8.0.3",
+    "@ionic-native/camera": "^5.12.0",
+    "@ionic-native/camera-preview": "^5.12.0",
+    "@ionic-native/core": "^5.12.0",
+    "@ionic-native/crop": "^5.12.0",
+    "@ionic-native/firebase-authentication": "^5.13.0",
+    "@ionic-native/geolocation": "^5.12.0",
+    "@ionic-native/google-maps": "^5.5.0",
+    "@ionic-native/google-plus": "^5.13.0",
+    "@ionic-native/image-picker": "^5.12.0",
+    "@ionic-native/native-geocoder": "^5.12.0",
+    "@ionic-native/splash-screen": "^5.12.0",
+    "@ionic-native/status-bar": "^5.12.0",
     "@ionic/storage": "2.2.0",
-    "ionic-angular": "3.9.5",
+    "@ultimate/ngxerrors": "^1.4.0",
+    "angularfire2": "^5.0.0-rc.10",
+    "browse": "0.4.0",
+    "cordova-android": "8.0.0",
+    "cordova-browser": "6.0.0",
+    "cordova-plugin-camera": "4.1.0",
+    "cordova-plugin-camera-preview": "0.11.0",
+    "cordova-plugin-facebook4": "6.0.0",
+    "cordova-plugin-geolocation": "4.0.2",
+    "cordova-plugin-googlemaps": "git+https://github.com/mapsplugin/cordova-plugin-googlemaps.git#multiple_maps",
+    "cordova-plugin-googleplus": "git+https://github.com/EddyVerbruggen/cordova-plugin-googleplus.git",
+    "cordova-plugin-nativegeocoder": "3.2.2",
+    "cordova-plugin-statusbar": "git+https://github.com/apache/cordova-plugin-statusbar.git",
+    "cordova-support-android-plugin": "1.0.1",
+    "firebase": "^5.0.4",
+    "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
-    "rxjs": "5.5.11",
+    "promise-polyfill": "^8.1.3",
+    "rxjs": "^6.2.1",
+    "rxjs-compat": "^6.2.1",
     "sw-toolbox": "3.6.0",
     "zone.js": "0.8.29"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "3.2.2",
-    "typescript": "~2.6.2"
+    "@ionic/app-scripts": "3.1.10",
+    "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-ionic-keyboard": "^2.1.3",
+    "cordova-plugin-ionic-webview": "^4.1.1",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "typescript": "^3.5.3"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-googleplus": {
+        "REVERSED_CLIENT_ID": "com.googleusercontent.apps.467479424539-rha64bhm6s9o4o4ea3e3ojq9t7euja3r"
+      },
+      "cordova-plugin-camera": {},
+      "cordova-plugin-geolocation": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {
+        "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
+      },
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-camera-preview": {
+        "ANDROID_SUPPORT_LIBRARY_VERSION": "26+"
+      },
+      "cordova-plugin-nativegeocoder": {},
+      "cordova-plugin-googlemaps": {
+        "API_KEY_FOR_ANDROID": "AIzaSyDBLh2ZfLOlJlVErKiK4hhB2JNu7FawTq0",
+        "API_KEY_FOR_IOS": "AIzaSyDBLh2ZfLOlJlVErKiK4hhB2JNu7FawTq0"
+      },
+      "cordova-plugin-facebook4": {
+        "APP_ID": "467846113770991",
+        "APP_NAME": "urbanSolver",
+        "FACEBOOK_HYBRID_APP_EVENTS": "false",
+        "FACEBOOK_ANDROID_SDK_VERSION": "5.2.0"
+      }
+    },
+    "platforms": [
+      "android"
+    ]
+  }
 }
